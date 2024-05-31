@@ -1,3 +1,9 @@
+import torchaudio
+import torch
+import time
+import threading
+import wave
+import pyaudio
 class SpeechRecognizer:
 
     def __init__(self, model_path, lm_path, context_secs=10):

@@ -1,3 +1,4 @@
+import ctcdecode
 class BeamSearchDecoder:
 
     def __init__(self, beam_width=100, blank_symbol='_', lm_path=None):

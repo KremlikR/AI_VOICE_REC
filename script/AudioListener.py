@@ -1,3 +1,7 @@
+import pyaudio
+import time
+import threading
+
 class AudioListener:
 
     def __init__(self, rate=8000, duration=2):

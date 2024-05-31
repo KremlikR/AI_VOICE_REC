@@ -1,5 +1,4 @@
 import torch
-import torchaudio
 import torchaudio.transforms as T
 
 class AudioToLogMelSpectrogram(torch.nn.Module):
