@@ -1,3 +1,6 @@
+from script.SpeechRecognizer import SpeechRecognizer
+
+
 class SpeechRecognitionHandler:
 
     def __init__(self):

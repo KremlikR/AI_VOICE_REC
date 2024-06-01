@@ -26,3 +26,4 @@ class AudioListener:
         listener_thread = threading.Thread(target=self.capture_audio, args=(queue,), daemon=True)
         listener_thread.start()
         print("Audio capture has started...")
+        
