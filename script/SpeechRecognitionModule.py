@@ -2,14 +2,13 @@ import os
 import ast
 import torch
 import torch.nn as nn
+from torch.nn import functional as F
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from pytorch_lightning import LightningModule, Trainer
+from torch.utils.data import DataLoader
+from pytorch_lightning.core.lightning import LightningModule
+from pytorch_lightning import Trainer
 from argparse import ArgumentParser
-from model import SpeechRecognition
-from dataset import Data, collate_fn_padd
-from pytorch_lightning.loggers import TensorBoardLogger
-from pytorch_lightning.callbacks import ModelCheckpoint
 
 
 class SpeechRecognitionModule(LightningModule):
