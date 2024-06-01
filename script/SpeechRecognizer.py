@@ -6,14 +6,14 @@ import time
 import threading
 import wave
 import pyaudio
-from script.LogMelSpectograrm import LogMelSpectogram
+from script.LogMelSpectograrm import create_featurizer
 class SpeechRecognizer:
 
     def __init__(self, model_path, lm_path, context_secs=10):
         self.audio_listener = AudioListener(sample_rate=8000)
         self.recognition_model = torch.jit.load(model_path)
         self.recognition_model.eval().to('cpu')
-        self.feature_extractor = get_featurizer(8000)
+        self.feature_extractor = create_featurizer(8000)
         self.audio_buffer = list()
         self.hidden_state = (torch.zeros(1, 1, 1024), torch.zeros(1, 1, 1024))
         self.beam_output = ""
