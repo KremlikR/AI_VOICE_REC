@@ -12,6 +12,7 @@ from argparse import ArgumentParser
 from script.Data import Data, collate_fn_padd
 from script.Speechrecognition import SpeechRecognition
 from pytorch_lightning.loggers import TensorBoardLogger
+from pytorch_lightning.callbacks import ModelCheckpoint
 
 class SpeechRecognitionModule(LightningModule):
 
