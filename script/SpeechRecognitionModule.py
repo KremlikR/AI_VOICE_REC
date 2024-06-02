@@ -9,7 +9,9 @@ from torch.utils.data import DataLoader
 from pytorch_lightning.core.lightning import LightningModule
 from pytorch_lightning import Trainer
 from argparse import ArgumentParser
-
+from script.Data import Data, collate_fn_padd
+from script.Speechrecognition import SpeechRecognition
+from pytorch_lightning.loggers import TensorBoardLogger
 
 class SpeechRecognitionModule(LightningModule):
 

@@ -1,6 +1,7 @@
 
 import ctcdecode
 import torch
+from script.TextProcess import TextProcess
 textprocess = TextProcess()
 
 labels = [
@@ -34,63 +35,6 @@ labels = [
     "z",  # 27
     "_",  # 28, blank
 ]
-
-def DecodeGreedy(output, blank_label=28, collapse_repeated=True):
-	arg_maxes = torch.argmax(output, dim=2).squeeze(1)
-	decode = []
-	for i, index in enumerate(arg_maxes):
-		if index != blank_label:
-			if collapse_repeated and i != 0 and index == arg_maxes[i -1]:
-				continue
-			decode.append(index.item())
-	return textprocess.int_to_text_sequence(decode)
-
-import ctcdecode
-import torch
-from script.TextProcess import TextProcess
-TextProcess = TextProcess()
-labels=[
-    "'",  
-    " ",  
-    "a",  
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",  
-    "_",  
-    ]
-def GreedyDecode(output, blank_label=28, collapse_repeated=True):
-    arg_maxes = torch.argmax(output, dim=2).squeeze(1)
-    decoded_sequence = []
-    for i, index in enumerate(arg_maxes):
-        if index != blank_label:
-            if collapse_repeated and i > 0 and index == arg_maxes[i - 1]:
-                continue
-            decoded_sequence.append(index.item())
-    return TextProcess.sequence_to_text(decoded_sequence)
-
-
 
 class BeamSearchDecoder:
 
