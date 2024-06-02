@@ -18,6 +18,7 @@ class SpeechRecognitionHandler:
 if __name__ == "__main__":
     import argparse
     import threading
+ 
 
     parser = argparse.ArgumentParser(description="Demonstrate the speech recognition engine in the terminal.")
     parser.add_argument('--model_file', type=str, required=True,
