@@ -4,15 +4,9 @@ import torchaudio
 import torch
 import threading
 import time
-
 from script.AudioListener import AudioListener
 from script.BeamSearchDecoder import BeamSearchDecoder
-import torchaudio
-import torch
-import time
-import threading
 import wave
-import pyaudio
 from script.LogMelSpectograrm import create_featurizer
 
 class SpeechRecognizer:
