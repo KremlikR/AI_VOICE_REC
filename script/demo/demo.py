@@ -2,18 +2,18 @@ import webbrowser
 import sys
 import argparse
 from os.path import join, realpath
-import Flask, render_template, jsonify
+import flask, templaterender, jsonify
 sys.path.append(realpath(join(realpath(__file__), '..', '..')))
 from script.SpeechRecognitionModule import SpeechRecognitionModule as SpeechRecognitionEngine
 
 
 global asr_engine
-app = Flask(__name__)
+app = flask(__name__)
 
 
 @app.route("/")
 def index():
-    return render_template('demo.html')
+    return templaterender('demo.html')
 
 
 @app.route("/start_asr")
