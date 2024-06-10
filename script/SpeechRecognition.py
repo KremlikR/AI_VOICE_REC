@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-from script.ActDropNormCNN1D import ActDropNormCNN1D
+from script.ActDropNorm1CNN1D import ActDropNormCNN1D
 
 class SpeechRecognition(nn.Module):
     """
