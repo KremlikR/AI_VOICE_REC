@@ -13,6 +13,9 @@ forward(self, x): Aplikuje augmentaci na vstupní spektrogram x.
 policy1(self, x): Aplikuje jednu sadu frekvenčního a časového maskování.
 policy2(self, x): Aplikuje dvě sady frekvenčního a časového maskování.
 policy3(self, x): Náhodně aplikuje buď policy1 nebo policy2.
+
+____________
+
 LogMelSpectrogram Class
 Purpose
 LogMelSpectrogram konvertuje audio vlnové formy na log-mel spektrogramy.
@@ -25,6 +28,9 @@ hop_length (int): Délka kroku mezi okny.
 Methods
 __init__(self, sample_rate=8000, n_mels=128, win_length=160, hop_length=80): Konstruktor třídy.
 forward(self, x): Vypočítá log-mel spektrogram pro vstupní audio vlnovou formu x.
+
+____________
+
 Data Class
 Purpose
 Data je custom dataset třída pro načítání a zpracování audio dat.
@@ -57,6 +63,9 @@ spectrograms (Tensor): Padlé spektrogramy.
 labels (Tensor): Padlé labely.
 input_lengths (list): Délky vstupů v batchi.
 label_lengths (list): Délky labelů v batchi.
+
+_____________
+
 BeamSearchDecoder Class
 Purpose
 Dekóduje výstup CTC-based modelu pomocí beam search s volitelným jazykovým modelem.
@@ -69,6 +78,9 @@ Methods
 __init__(self, beam_width=100, blank_symbol='_', lm_path=None): Konstruktor třídy.
 __call__(self, output): Dekóduje výstupní tensor output.
 _tokens_to_string(self, tokens, vocabulary, length): Konvertuje tokeny na řetězec.
+
+______________
+
 AudioToLogMelSpectrogram Class
 Purpose
 Konvertuje audio vlnové formy na log-mel spektrogramy.
@@ -81,6 +93,9 @@ hop_length (int): Délka kroku mezi okny.
 Methods
 __init__(self, sample_rate=16000, n_mels=128, n_fft=400, hop_length=160): Konstruktor třídy.
 forward(self, waveform): Vypočítá log-mel spektrogram pro vstupní audio vlnovou formu waveform.
+
+_______________
+
 AudioListener Class
 Purpose
 Zachycuje audio z mikrofonu v reálném čase.
@@ -114,7 +129,7 @@ DEVICE (torch.device): Zařízení pro výpočty (CPU nebo CUDA).
 import torch
 from torch.utils.data import DataLoader
 
-# Instantiate dataset and data loader
+
 dataset = Data(
     json_path='path/to/your/data.json',
     sample_rate=8000,
@@ -133,20 +148,19 @@ data_loader = DataLoader(
     shuffle=True
 )
 
-# Iterate through data loader
+
 for batch in data_loader:
     spectrograms, labels, input_lengths, label_lengths = batch
     # Your training or inference code here
 
-# Instantiate beam search decoder
+
 decoder = BeamSearchDecoder(beam_width=100, blank_symbol='_', lm_path=None)
 
-# Decode model output
-# Assuming 'output' is the output tensor from your model
+
 decoded_output = decoder(output)
 print(decoded_output)
 
-# Start audio listener
+
 audio_queue = []
 listener = AudioListener(rate=8000, duration=2)
 listener.start(audio_queue)
