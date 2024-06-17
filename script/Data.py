@@ -2,7 +2,7 @@ import torch
 import torchaudio
 import torch.nn as nn
 import pandas as pd
-from script.LogMelSpectogram import LogMelSpectogram as LogMelSpec
+from script.LogMelSpectogram import LogMelSpectrogram as LogMelSpec
 from script.TextProcess import  TextProcess
 from script.SpecAugment import  SpecAugment
 
