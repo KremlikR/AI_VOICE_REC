@@ -7,7 +7,7 @@ import time
 from script.AudioListener import AudioListener
 from script.BeamSearchDecoder import BeamSearchDecoder
 import wave
-from script.LogMelSpectograrm import create_featurizer
+from script.LogMelSpectogram import create_featurizer
 
 class SpeechRecognizer:
 

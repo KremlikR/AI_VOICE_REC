@@ -3,8 +3,7 @@ from unittest.mock import patch, MagicMock
 import torch
 import numpy as np
 from script.TextProcess import TextProcess
-from mymodule import GreedyDecode, BeamSearchDecoder  # Adjust the import based on your module's actual name and structure
-
+from mymodule import GreedyDecode, BeamSearchDecoder  
 class TestGreedyDecode(unittest.TestCase):
 
     @patch('script.TextProcess.TextProcess.sequence_to_text')
