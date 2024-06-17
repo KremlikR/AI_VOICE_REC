@@ -1,6 +1,6 @@
 import unittest
 from script.SpeechRecognizer import SpeechRecognizer
-from mymodule import SpeechRecognitionHandler  # Adjust the import based on your module's actual name and structure
+from mymodule import SpeechRecognitionHandler  
 
 class TestSpeechRecognitionHandler(unittest.TestCase):
 

@@ -6,8 +6,8 @@ import wave
 import pyaudio
 from script.AudioListener import AudioListener
 from script.BeamSearchDecoder import BeamSearchDecoder
-from script.LogMelSpectograrm import create_featurizer
-from mymodule import SpeechRecognizer  # Adjust the import based on your module's actual name and structure
+from script.LogMelSpectogram import create_featurizer
+from script.SpeechRecognizer import SpeechRecognizer
 
 class TestSpeechRecognizer(unittest.TestCase):
 
